@@ -1,0 +1,13 @@
+.footerContainer {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    display: grid;
+    background-color: #111;
+    color: #fff;
+}
+
+.copyright {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
