@@ -5,6 +5,8 @@ import Header from "./Section/Header";
 import Presentation from "./Section/Presentations";
 import Menus from "./Section/Menus";
 import Categories from "./Section/Categories";
+import Announcement from "./Section/Announcement";
+import Services from "./Section/Services";
 
 export default function Home() {
   return (
@@ -15,10 +17,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="container">
-        <Presentation />
-        <Menus />
-        <Categories />
+      <main>
+        <div className="container">
+          <Presentation />
+          <Menus />
+          <Categories />
+        </div>
+        <Announcement />
+        <div className="container">
+          <Services />
+        </div>
       </main>
 
       <footer>

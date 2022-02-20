@@ -8,7 +8,18 @@ const Menus = () => {
     <section>
       <h2 className={styles.title}>Menus</h2>
       <CategorieList />
-      <Items />
+      <div className={styles.row}>
+        <Items />
+        <Items />
+        <Items />
+        <Items />
+        <Items />
+        <Items />
+        <Items />
+        <Items />
+        <Items />
+        <Items />
+      </div>
     </section>
   );
 };
