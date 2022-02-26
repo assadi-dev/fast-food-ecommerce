@@ -36,8 +36,18 @@
     height: 340px;
     position: relative;
     overflow: hidden;
-    background-color: gray;
     flex-shrink: 0;
+    filter: blur(0.3);
+    -webkit-filter: blur(0.8);
+    background: rgba(40, 40, 40, 0.2);
+    text-align: center;
+}
+
+.cardImage {
+    filter: grayscale(0.5);
+    -webkit-filter: grayscale(0.5);
+    width: 200px;
+    height: 200px;
 }
 
 .card:not(:first-of-type) {
@@ -45,16 +55,11 @@
 }
 
 .cardDetails {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     text-align: center;
     color: #fff;
-    transform: translateY(50px);
-    -webkit-transform: translateY(50px);
-    -moz-transform: translateY(50px);
-    -ms-transform: translateY(50px);
-    -o-transform: translateY(50px);
+    display: flex;
+    flex-direction: column;
     transition: all 0.35s ease-in-out;
     -webkit-transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
@@ -64,20 +69,12 @@
 
 .card:hover .cardImage {
     transition: all 0.35s ease;
-    filter: brightness(0.5);
-    -webkit-filter: brightness(0.5);
+    filter: grayscale(0);
     -webkit-transition: all 0.35s ease;
     -moz-transition: all 0.35s ease;
     -ms-transition: all 0.35s ease;
     -o-transition: all 0.35s ease;
-}
-
-.card:hover .cardDetails {
-    transform: translateY(-50px);
-    -webkit-transform: translateY(-50px);
-    -moz-transform: translateY(-50px);
-    -ms-transform: translateY(-50px);
-    -o-transform: translateY(-50px);
+    -webkit-filter: grayscale(0);
 }
 
 .row {

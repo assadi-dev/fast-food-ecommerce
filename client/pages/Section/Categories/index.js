@@ -3,111 +3,81 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import Link from "next/link";
 
-const categorie = [
-  { name: "Pizza", preview: "" },
-  { name: "Burger", preview: "" },
-  { name: "Wrap", preview: "" },
-  { name: "Boisson", preview: "" },
-  { name: "Dessert", preview: "" },
+const categories = [
+  {
+    name: "Pizza",
+    preview: "/img/categories/alan-hardman-SU1LFoeEUkk-unsplash.jpg",
+    alt: "pizza categorie picture",
+    slug: "pizza",
+  },
+  {
+    name: "Entrée",
+    preview: "/img/categories/leo-roza-P_z_xlMGuEk-unsplash.jpg",
+    alt: "entrée categorie picture",
+    slug: "entree",
+  },
+  {
+    name: "Burger",
+    preview: "/img/categories/sk-uVPV_nV17Tw-unsplash.jpg",
+    alt: "burger categorie picture",
+    slug: "burger",
+  },
+  {
+    name: "Wrap",
+    preview: "/img/categories/frank-alarcon-Oya1Kx9311k-unsplash.jpg",
+    alt: "wrap categorie picture",
+    slug: "wrap",
+  },
+  {
+    name: "Boisson",
+    preview: "/img/categories/nikhil-_HWvaZjsTbc-unsplash.jpg",
+    alt: "boisson categorie picture",
+    slug: "boisson",
+  },
+  {
+    name: "Dessert",
+    preview: "/img/categories/aneta-voborilova-RQYAbzjCK6k-unsplash.jpg",
+    alt: "dessert categorie picture",
+    slug: "dessert",
+  },
 ];
+
+const CardCategorie = ({ name, img, alt, slug }) => {
+  return (
+    <div className={styles.card}>
+      <Link href={`/categorie/${slug}`}>
+        <a>
+          <Image
+            src={img}
+            alt={alt}
+            width={1920}
+            height={1080}
+            layout="responsive"
+            className={styles.cardImage}
+          />
+          <div className={styles.cardDetails}>
+            <p className={styles.detailTitle}>{name}</p>
+            <button>ENTRER</button>
+          </div>
+        </a>
+      </Link>
+    </div>
+  );
+};
 
 function Categories() {
   return (
     <section>
       <h2 className={styles.title}>Categories</h2>
       <div className={styles.row}>
-        <div className={styles.cardLeft}>
-          <Link href={`/categorie/pizza`}>
-            <a>
-              <Image
-                src="/img/categories/alan-hardman-SU1LFoeEUkk-unsplash.jpg"
-                alt="pizza categorie picture"
-                width={1920}
-                height={1080}
-                layout="responsive"
-                className={styles.cardImage}
-              />
-              <div className={styles.cardDetails}>
-                <p className={styles.detailTitle}>Pizza</p>
-                <button>ENTRER</button>
-              </div>
-            </a>
-          </Link>
-        </div>
-        <div className={styles.cardRight}>
-          <Image
-            src="/img/categories/leo-roza-P_z_xlMGuEk-unsplash.jpg"
-            alt="entrée categorie picture"
-            width={520}
-            height={280}
-            layout="responsive"
-            className={styles.cardImage}
+        {categories.map((categorie, index) => (
+          <CardCategorie
+            key={index}
+            name={categorie.name}
+            img={categorie.preview}
+            slug={categorie.slug}
           />
-          <div className={styles.cardDetails}>
-            <p className={styles.detailTitle}>Entrée</p>
-            <button>ENTRER</button>
-          </div>
-        </div>
-      </div>
-      <div className={styles.row}>
-        <div className={styles.cardLeft}>
-          <Image
-            src="/img/categories/sk-uVPV_nV17Tw-unsplash.jpg"
-            alt="burger categorie picture"
-            width={520}
-            height={280}
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <div className={styles.cardDetails}>
-            <p className={styles.detailTitle}>Burger</p>
-            <button>ENTRER</button>
-          </div>
-        </div>
-        <div className={styles.cardRight}>
-          <Image
-            src="/img/categories/frank-alarcon-Oya1Kx9311k-unsplash.jpg"
-            alt="tacos categorie picture"
-            width={520}
-            height={280}
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <div className={styles.cardDetails}>
-            <p className={styles.detailTitle}>Wrap</p>
-            <button>ENTRER</button>
-          </div>
-        </div>
-      </div>
-      <div className={styles.row}>
-        <div className={styles.cardLeft}>
-          <Image
-            src="/img/categories/nikhil-_HWvaZjsTbc-unsplash.jpg"
-            alt="boisson categorie picture"
-            width={520}
-            height={280}
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <div className={styles.cardDetails}>
-            <p className={styles.detailTitle}>Boisson</p>
-            <button>ENTRER</button>
-          </div>
-        </div>
-        <div className={styles.cardRight}>
-          <Image
-            src="/img/categories/aneta-voborilova-RQYAbzjCK6k-unsplash.jpg"
-            alt="dessert categorie picture"
-            width={520}
-            height={280}
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <div className={styles.cardDetails}>
-            <p className={styles.detailTitle}>Dessert</p>
-            <button>ENTRER</button>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

@@ -15,16 +15,7 @@
     margin-bottom: 25px;
 }
 
-.cardLeft {
-    grid-area: card1;
-}
-
-.cardRight {
-    grid-area: card2;
-}
-
-.cardRight,
-.cardLeft {
+.card {
     position: relative;
     transition: all 0.35s ease;
     -webkit-transition: all 0.35s ease;
@@ -77,14 +68,12 @@
     -o-transition: all 0.35s ease;
 }
 
-.cardLeft:hover .cardImage,
-.cardRight:hover .cardImage {
+.card:hover .cardImage {
     filter: brightness(0.5);
     -webkit-filter: brightness(0.5);
 }
 
-.cardLeft:hover .cardDetails,
-.cardRight:hover .cardDetails {
+.card:hover .cardDetails {
     transform: translateY(0);
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
