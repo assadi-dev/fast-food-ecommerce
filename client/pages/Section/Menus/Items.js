@@ -28,7 +28,16 @@ function Items() {
         </select>
       </div>
       <div>
-        <Commander>Commander</Commander>
+        <p>25€</p>
+        <Commander
+          style={{
+            background: "orange",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
+          Commander
+        </Commander>
       </div>
     </div>
   );
