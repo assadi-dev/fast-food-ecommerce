@@ -7,7 +7,6 @@ import Menus from "./Section/Menus";
 import Categories from "./Section/Categories";
 import Announcement from "./Section/Announcement";
 import Services from "./Section/Services";
-import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -29,7 +28,6 @@ export default function Home() {
           <Services />
         </div>
       </main>
-      <Footer />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
-import { useRouter } from "next/dist/client/router";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Categorie() {
   const router = useRouter();

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 const categorie = [
   { name: "Pizza", preview: "" },
@@ -16,18 +17,22 @@ function Categories() {
       <h2 className={styles.title}>Categories</h2>
       <div className={styles.row}>
         <div className={styles.cardLeft}>
-          <Image
-            src="/img/categories/alan-hardman-SU1LFoeEUkk-unsplash.jpg"
-            alt="pizza categorie picture"
-            width={520}
-            height={280}
-            layout="responsive"
-            className={styles.cardImage}
-          />
-          <div className={styles.cardDetails}>
-            <p className={styles.detailTitle}>Pizza</p>
-            <button>ENTRER</button>
-          </div>
+          <Link href={`/categorie/pizza`}>
+            <a>
+              <Image
+                src="/img/categories/alan-hardman-SU1LFoeEUkk-unsplash.jpg"
+                alt="pizza categorie picture"
+                width={1920}
+                height={1080}
+                layout="responsive"
+                className={styles.cardImage}
+              />
+              <div className={styles.cardDetails}>
+                <p className={styles.detailTitle}>Pizza</p>
+                <button>ENTRER</button>
+              </div>
+            </a>
+          </Link>
         </div>
         <div className={styles.cardRight}>
           <Image
